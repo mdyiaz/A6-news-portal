@@ -172,11 +172,11 @@ const displayNewsDetails = news => {
           <img src="${newsDetails.author.img}" height="40px" width="40px" class="img-fluid rounded "
               alt="...">
           <div>
-              <p class="card-text"><small class="text-muted">${newsDetails.author.name}</small></p>
+              <p class="card-text"><small class="text-muted">${newsDetails.author.name ? newsDetails.author.name : 'Author name not found'}</small></p>
               <p><small class="text-muted"> ${newsDetails.author.published_date}</small></p>
               </div>
              </div>
-            <div><i class="fa-solid fa-eye"></i> ${newsDetails.total_view}</div>
+            <div><i class="fa-solid fa-eye"></i> ${newsDetails.total_view ? newsDetails.total_view : 'total view cannot countable'}</div>
           </div>   
 
         </div>
