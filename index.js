@@ -61,6 +61,15 @@ const displayCategoriesDetails = (detail) => {
   // spinner start____________
   toggleSpinner(true);
 
+  //  sort
+
+  detail.sort(function (a, b) {
+    return b.total_view - a.total_view;
+  });
+
+  //  sort
+
+
   const newsCount = document.getElementById('news-count');
   const countLength = detail.length;
   newsCount.innerText = countLength;
