@@ -2,7 +2,8 @@ const loadData = () => {
   const url = (`https://openapi.programming-hero.com/api/news/categories`);
   fetch(url)
     .then(res => res.json())
-    .then(data => displayNewsNavbar(data.data.news_category));
+    .then(data => displayNewsNavbar(data.data.news_category))
+    .catch(error => console.log(error))
 }
 
 
@@ -49,6 +50,8 @@ const categoriesNews = (post) => {
   fetch(url2)
     .then(res => res.json())
     .then(data => displayCategoriesDetails(data.data))
+    .catch(error => console.log(error))
+
 }
 
 
@@ -132,6 +135,7 @@ const loadNewsDetails = id => {
   fetch(url)
     .then(res => res.json())
     .then(data => displayNewsDetails(data.data))
+    .catch(error => console.log(error))
 
 }
 
