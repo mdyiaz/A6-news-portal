@@ -36,6 +36,9 @@ categoriesNews();
 
 
 const displayCategoriesDetails = (detail) => {
+  const newsCount = document.getElementById('news-count');
+  const countLength = detail.length;
+  newsCount.innerText = countLength;
   const newsDetails = document.getElementById('news-details');
   newsDetails.innerHTML = '';
   detail.forEach((details) => {
