@@ -16,6 +16,7 @@ const displayNewsNavbar = data => {
     const li = document.createElement('li');
     li.classList.add('list-group-item');
     li.innerHTML = `
+       
         <p onclick="categoriesNews('${catagories.category_id}')" >${catagories.category_name}</p>`;
 
 
@@ -40,6 +41,20 @@ const displayCategoriesDetails = (detail) => {
   const countLength = detail.length;
   newsCount.innerText = countLength;
   const newsDetails = document.getElementById('news-details');
+
+
+  // no news found____________________________
+  const noNews = document.getElementById('no-news');
+  if (detail.length === 0) {
+    noNews.classList.remove('d-none');
+
+  }
+
+  else {
+    noNews.classList.add('d-none');
+  }
+
+
   newsDetails.innerHTML = '';
   detail.forEach((details) => {
     //console.log(details);
