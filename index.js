@@ -50,7 +50,7 @@ const displayCategoriesDetails = (detail) => {
         <div class="col-md-8">
             <div class="card-body">
                 <h5 class="card-title">${details.title}</h5>
-                <p class="card-text">${details.details}</p>
+                <p class="card-text">${details.details.length > 180 ? details.details.slice(0, 180) + '...' : details.details}</p>
 
                 <div class="d-flex justify-content-between">
                     <div>
