@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Daily Mirrore</title>
 
 
     <script src="https://kit.fontawesome.com/cfa78000ac.js" crossorigin="anonymous"></script>
@@ -20,7 +20,8 @@
     <header>
         <nav class="navbar navbar-expand-lg bg-light">
             <div class="container-fluid">
-                <a class="navbar-brand" href="#"><span class="fs-2 fst-italic text-primary fw-bold">Daily</span>
+                <a class="navbar-brand fw-bold" href="#"><span
+                        class="fs-2 fst-italic text-white bg-danger p-1 rounded ">Daily</span>
                     Mirrore</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
@@ -116,8 +117,27 @@
         </section>
 
 
-        <section id="no-news" class="d-none">
+        <section id="no-news" class="d-none mb-5">
             <h2 class="text-warning">no result found in this categories</h2>
+        </section>
+
+
+
+        <section class="mb-5">
+            <div class="row justify-content-between">
+                <div class="col-sm-12 col-lg-4 d-flex">
+                    <h6>Sort By View: </h6>
+                    <select class="ms-3 form-select w-50" value="Default" aria-label="Default select example">
+                        <option selected>Default</option>
+                        <option value="1">Low to High</option>
+                        <option value="3">High to Low</option>
+                    </select>
+                </div>
+                <div class="col-sm-12 col-lg-4 text-end">
+                    <button type="button" class="btn btn-danger">Today's Pick</button>
+                    <button type="button" class="btn btn-light">Trending</button>
+                </div>
+            </div>
         </section>
 
 
