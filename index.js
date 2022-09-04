@@ -5,10 +5,12 @@ const loadData = () => {
     .then(data => displayNewsNavbar(data.data.news_category));
 }
 
-loadData();
+
 
 
 const displayNewsNavbar = data => {
+
+
   const newsField = document.getElementById('ul-field');
 
   data.forEach((catagories) => {
@@ -20,10 +22,27 @@ const displayNewsNavbar = data => {
         <p onclick="categoriesNews('${catagories.category_id}')" >${catagories.category_name}</p>`;
 
 
+
     newsField.appendChild(li);
 
   });
 }
+
+
+// start spinner_________________
+const toggleSpinner = isLoading => {
+  const spinnerSection = document.getElementById('spinner');
+
+  if (isLoading) {
+    spinnerSection.classList.remove('d-none');
+
+  }
+
+  else {
+    spinnerSection.classList.add('d-none');
+  }
+}
+
 
 const categoriesNews = (post) => {
   const url2 = (`https://openapi.programming-hero.com/api/news/category/${post}`);
@@ -32,18 +51,20 @@ const categoriesNews = (post) => {
     .then(data => displayCategoriesDetails(data.data))
 }
 
-categoriesNews();
 
 
 
 const displayCategoriesDetails = (detail) => {
+  // spinner start____________
+  toggleSpinner(true);
+
   const newsCount = document.getElementById('news-count');
   const countLength = detail.length;
   newsCount.innerText = countLength;
   const newsDetails = document.getElementById('news-details');
 
 
-  // no news found____________________________
+  // // no news found____________________________
   const noNews = document.getElementById('no-news');
   if (detail.length === 0) {
     noNews.classList.remove('d-none');
@@ -92,8 +113,17 @@ const displayCategoriesDetails = (detail) => {
         `;
 
     newsDetails.appendChild(div);
+    // end spinner_______________
+    toggleSpinner(false);
   });
+
 }
+
+
+
+
+
+
 
 
 const loadNewsDetails = id => {
@@ -153,6 +183,12 @@ const displayNewsDetails = news => {
   });
 
 }
+
+
+categoriesNews('01');
+
+
+loadData();
 
 
 
